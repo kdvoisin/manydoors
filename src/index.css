@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.45s ease-out both; }
+
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.55); }
+  50% { transform: scale(1.03); box-shadow: 0 0 0 14px rgba(13, 148, 136, 0); }
+}
+.animate-soft-pulse { animation: soft-pulse 0.5s ease-in-out 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up, .animate-soft-pulse { animation: none; }
+}

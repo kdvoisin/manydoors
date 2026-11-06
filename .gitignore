@@ -1,0 +1,7 @@
+# Downloaded tools (reinstalled with `npm install`)
+node_modules/
+# Built site (published to the gh-pages branch by `npm run deploy`)
+dist/
+# Test screenshots
+tmp/*.png
+.DS_Store

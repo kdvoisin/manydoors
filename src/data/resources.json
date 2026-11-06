@@ -1,0 +1,44 @@
+[
+  {
+    "name": "SAFE Alliance",
+    "city": "Austin",
+    "countiesServed": ["Travis County, TX"],
+    "phone": "512-267-7233",
+    "phoneLabel": "24/7 SAFEline",
+    "acceptsPets": true,
+    "listedInSaft": true,
+    "petHousing": "on-site",
+    "petDetails": "On-site pet shelter",
+    "petInfoSource": { "name": "SAF-T Program directory", "url": "https://saftprogram.org/shelters/" },
+    "otherDetailsSource": { "name": "DomesticShelters.org", "url": "https://www.domesticshelters.org/" },
+    "lastVerified": "2026-11-06"
+  },
+  {
+    "name": "Hope Alliance",
+    "city": "Round Rock",
+    "countiesServed": ["Williamson County, TX", "Travis County, TX"],
+    "phone": "800-460-7233",
+    "phoneLabel": "24/7 hotline",
+    "acceptsPets": true,
+    "listedInSaft": false,
+    "petHousing": "off-site",
+    "petDetails": "Off-site pet shelter",
+    "petInfoSource": { "name": "DomesticShelters.org", "url": "https://www.domesticshelters.org/" },
+    "otherDetailsSource": { "name": "DomesticShelters.org", "url": "https://www.domesticshelters.org/" },
+    "lastVerified": "2026-11-06"
+  },
+  {
+    "name": "Crisis Center of Comal County",
+    "city": "New Braunfels",
+    "countiesServed": ["Comal County, TX"],
+    "phone": "830-620-4357",
+    "phoneLabel": null,
+    "acceptsPets": true,
+    "listedInSaft": true,
+    "petHousing": null,
+    "petDetails": null,
+    "petInfoSource": { "name": "SAF-T Program directory", "url": "https://saftprogram.org/shelters/" },
+    "otherDetailsSource": { "name": "DomesticShelters.org", "url": "https://www.domesticshelters.org/" },
+    "lastVerified": "2026-11-06"
+  }
+]
