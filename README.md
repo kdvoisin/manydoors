@@ -29,7 +29,7 @@ All shelters live in **`src/data/resources.json`**. Each entry has: `name`, `cit
 After making changes, publish them with: `npm run deploy` (builds the app and pushes it to the `gh-pages` branch; the live site updates in about a minute).
 
 ## Tests
-Automated browser tests live in `tmp/` (they use your installed Google Chrome). With the app running: `cd tmp && node test.mjs`
+Automated browser tests live in `tmp/` (they use your installed Google Chrome). With the app running: `cd tmp && node test.mjs`. To test the live site instead: `cd tmp && BASE=https://kdvoisin.github.io/manydoors/ node test.mjs`
 
 ## For developers
 `npm install`, then `npm run dev`. React 19 + Vite + Tailwind CSS v4. No storage, cookies, or network calls.

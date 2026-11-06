@@ -1,13 +1,15 @@
 import { chromium } from 'playwright-core'
+const BASE = process.env.BASE || 'http://localhost:5173'
+const SELF = new URL(BASE).hostname
 const b = await chromium.launch({ channel: 'chrome' })
 const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } })
 const p = await ctx.newPage()
 const outside = new Set()
-p.on('request', r => { const u = new URL(r.url()); if (!['localhost','127.0.0.1'].includes(u.hostname) && !['data:','blob:'].includes(u.protocol)) outside.add(r.url()) })
-p.on('websocket', w => { const u = new URL(w.url()); if (!['localhost','127.0.0.1'].includes(u.hostname)) outside.add(w.url()) })
+p.on('request', r => { const u = new URL(r.url()); if (!['localhost','127.0.0.1',SELF].includes(u.hostname) && !['data:','blob:'].includes(u.protocol)) outside.add(r.url()) })
+p.on('websocket', w => { const u = new URL(w.url()); if (!['localhost','127.0.0.1',SELF].includes(u.hostname)) outside.add(w.url()) })
 const errs = []; p.on('pageerror', e => errs.push(e.message)); p.on('console', m => m.type()==='error' && errs.push(m.text()))
 const ok = (c, m) => console.log((c ? 'PASS ' : 'FAIL ') + m)
-await p.goto('http://localhost:5173', { waitUntil: 'networkidle' })
+await p.goto(BASE, { waitUntil: 'networkidle' })
 ok(await p.inputValue('#name') === '' && await p.getAttribute('#name','placeholder') === 'First name or nickname', 'name empty with new placeholder')
 ok(await p.title() === 'Home', 'neutral tab title: ' + await p.title())
 const home = await p.evaluate(() => document.body.innerText.replace(/\s+/g,' '))
